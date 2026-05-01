@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RelifeProducts — Global Food Exports</title>
+<meta name="description" content="RelifeProducts is a B2B food export brand supplying cereals, spices, confectionery, sweeteners, fats and ready-to-eat products worldwide."/>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* === UPDATED LOGO-BASED COLOR SCHEME === */
+  --ink:#060f24;           /* Deep Navy - Main brand color from "RELIFE" */
+  --ink2:#1E2A4C;
+  --ink3:#44567A;
+  --muted:#8C9AA8;
+
+  --border:#E2D9C8;
+  --cream:#F8F4EB;
+  --warm:#FDFAF4;
+  --card:#FFFFFF;
+
+  --olive:#1F4A31;
+  --olive2:#2A5F3E;        /* Green from logo "Products" */
+  --olive3:#3D7A55;
+
+  --gold:#D4A017;
+  --gold2:#E8C24A;         /* Gold from logo arrow */
+  --gold3:#F5D98A;
+
+  --terra:#B85C34;
+  --sage:#8FA67A;
+
+  --ff-d:'Cormorant Garamond',Georgia,serif;
+  --ff-b:'Outfit',system-ui,sans-serif;
+  --ff-m:'DM Mono',monospace;
+  --ff-c:'Cinzel',serif;
+
+  --nav-h:76px;--r:10px;--r2:18px;
+  --sh1:0 1px 4px rgba(15,28,58,.07),0 4px 20px rgba(15,28,58,.09);
+  --sh2:0 6px 30px rgba(15,28,58,.13),0 2px 8px rgba(15,28,58,.08);
+  --sh3:0 16px 60px rgba(15,28,58,.22);
+  --t:all .28s cubic-bezier(.4,0,.2,1);
+}
+
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:var(--ff-b);background:var(--warm);color:var(--ink);line-height:1.65;overflow-x:hidden}
+::selection{background:rgba(212,160,23,.18);color:var(--ink)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--olive3);border-radius:3px}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;font-family:var(--ff-b)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.85);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-600px 0}100%{background-position:600px 0}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:160px}
+
+/* NAV LOGO */
+.nav-logo{display:flex;align-items:center;gap:5px;cursor:pointer;text-decoration:none;flex-shrink:0}
+.nav-logo-icon{flex-shrink:0;width:44px;height:44px}
+.nav-logo-vbar{width:1px;height:36px;background:linear-gradient(to bottom,transparent,rgba(212,160,23,0.32),transparent);flex-shrink:0}
+.nav-logo-text{display:flex;flex-direction:column;gap:0;line-height:1}
+.nav-logo-brand{font-family:'Cinzel',serif;font-weight:700;font-size:21px;letter-spacing:0.22em;color:var(--ink);line-height:1}
+.nav-logo-rule{height:1px;background:linear-gradient(90deg,#9A7010,#D4A017,#E8C24A,#D4A017,#9A7010);margin:5px 0 4px;width:100%}
+.nav-logo-sub{display:flex;align-items:center;gap:6px}
+.nav-logo-sub-text{font-family:'Cinzel',serif;font-weight:400;font-size:8px;letter-spacing:0.48em;color:var(--olive2);text-transform:uppercase}
+.nav-logo-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.nav-logo-tagline{font-family:'DM Mono',monospace;font-size:6.5px;letter-spacing:0.26em;color:var(--muted);text-transform:uppercase}
+
+/* FOOTER LOGO */
+.footer-logo{display:flex;align-items:center;gap:14px}
+.footer-logo-icon{flex-shrink:0;width:38px;height:38px}
+.footer-logo-vbar{width:1px;height:32px;background:linear-gradient(to bottom,transparent,rgba(212,160,23,0.3),transparent);flex-shrink:0}
+.footer-logo-text{display:flex;flex-direction:column;gap:0;line-height:1}
+.footer-logo-brand{font-family:'Cinzel',serif;font-weight:700;font-size:18px;letter-spacing:0.22em;color:rgba(246,242,234,0.95);line-height:1}
+.footer-logo-rule{height:1px;background:linear-gradient(90deg,rgba(212,160,23,0.6),rgba(232,194,74,0.6),rgba(212,160,23,0.6));margin:5px 0 4px;width:100%}
+.footer-logo-sub{display:flex;align-items:center;gap:6px}
+.footer-logo-sub-text{font-family:'Cinzel',serif;font-weight:400;font-size:7px;letter-spacing:0.45em;color:var(--gold3);text-transform:uppercase}
+.footer-logo-dot{width:2.5px;height:2.5px;border-radius:50%;background:rgba(232,194,74,0.6);flex-shrink:0}
+.footer-logo-tagline{font-family:'DM Mono',monospace;font-size:6px;letter-spacing:0.24em;color:rgba(246,242,234,0.35);text-transform:uppercase}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(251,251,251,.95);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--border);transition:var(--t)}
+.nav.scrolled{box-shadow:var(--sh1)}
+.nav-links{display:flex;gap:2.5rem;align-items:center}
+.nav-link{font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);cursor:pointer;transition:color .2s;position:relative}
+.nav-link::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-link:hover{color:var(--ink)}.nav-link:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.nav-admin{font-family:var(--ff-m);font-size:.7rem;letter-spacing:.04em;color:var(--muted);border:1px solid var(--border);padding:.42rem .9rem;border-radius:6px;background:transparent;transition:var(--t)}
+.nav-admin:hover{border-color:var(--olive);color:var(--olive)}
+.btn-cta{background:var(--olive2);color:var(--cream);padding:.6rem 1.5rem;border:none;border-radius:var(--r);font-size:.82rem;font-weight:600;letter-spacing:.03em;transition:var(--t)}
+.btn-cta:hover{background:var(--ink);transform:translateY(-1px);box-shadow:0 6px 20px rgba(15,28,58,.25)}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:.4rem}
+.nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:var(--t)}
+.mobile-menu{display:none;position:fixed;inset:0;top:var(--nav-h);background:var(--warm);z-index:850;flex-direction:column;padding:2rem;gap:1.5rem;border-top:1px solid var(--border)}
+.mobile-menu.open{display:flex}
+.mobile-menu .nav-link{font-size:1.1rem}
+.mobile-menu .btn-cta{width:100%;text-align:center;padding:.8rem;font-size:.9rem}
+
+/* TICKER */
+.ticker-bar{position:fixed;top:var(--nav-h);left:0;right:0;z-index:800;height:38px;background:var(--olive2);overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 32s linear infinite}
+.ticker-item{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.55);padding:0 2.2rem;display:flex;align-items:center;gap:.9rem}
+.ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--gold2);flex-shrink:0}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;padding-top:calc(var(--nav-h) + 38px);display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-img{position:absolute;inset:0;background-image:url('hero.jpg');background-size:cover;background-position:center 40%;filter:saturate(.85) brightness(.9)}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,28,58,.85) 0%,rgba(15,28,58,.62) 45%,rgba(15,28,58,.25) 100%)}
+.hero-bg-img::before{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(15,28,58,.65) 0%,transparent 100%);z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 3rem;width:100%;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:.75rem;font-family:var(--ff-m);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.6rem;animation:fadeUp .5s ease .1s both}
+.hero-kicker-line{width:32px;height:1px;background:var(--gold2)}
+h1.hero-h1{font-family:var(--ff-d);font-size:clamp(3.2rem,5.2vw,4.8rem);font-weight:600;line-height:1.04;letter-spacing:-.02em;color:#fff;margin-bottom:1.6rem;animation:fadeUp .65s ease .2s both}
+h1.hero-h1 em{font-style:italic;color:var(--gold2)}
+.hero-desc{font-size:1.02rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.75);max-width:480px;margin-bottom:2.8rem;animation:fadeUp .65s ease .35s both}
+.hero-btns{display:flex;gap:.9rem;animation:fadeUp .65s ease .5s both}
+.btn-hp{background:var(--gold);color:var(--ink);padding:.88rem 2rem;border:none;border-radius:var(--r);font-size:.92rem;font-weight:600;letter-spacing:.02em;transition:var(--t)}
+.btn-hp:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,.45)}
+.btn-ho{background:transparent;color:#fff;padding:.88rem 2rem;border:1.5px solid rgba(255,255,255,.4);border-radius:var(--r);font-size:.92rem;font-weight:500;transition:var(--t)}
+.btn-ho:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.18);animation:fadeUp .65s ease .65s both;flex-wrap:wrap}
+.hero-stat-n{font-family:var(--ff-d);font-size:2.1rem;font-weight:700;color:var(--gold2);line-height:1;letter-spacing:-.02em}
+.hero-stat-l{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.3rem}
+.hero-card{background:rgba(253,250,244,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--r2);padding:2rem;backdrop-filter:blur(12px);animation:fadeUp .7s ease .4s both}
+.hero-card-hd{font-family:var(--ff-m);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.3rem}
+.hero-cat-row{display:flex;align-items:center;justify-content:space-between;padding:.65rem .7rem;border-radius:8px;cursor:pointer;transition:background .18s}
+.hero-cat-row:hover{background:rgba(255,255,255,.08)}
+.hero-cat-left{display:flex;align-items:center;gap:.7rem}
+.hero-cat-ico{width:34px;height:34px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.hero-cat-ico img{width:100%;height:100%;object-fit:cover}
+.hero-cat-name{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.85)}
+.hero-cat-arrow{font-family:var(--ff-m);font-size:.7rem;color:rgba(255,255,255,.4)}
+.hero-divider{height:1px;background:rgba(255,255,255,.15);margin:1.2rem 0}
+.hero-certs{display:flex;gap:.45rem;flex-wrap:wrap}
+.hero-cert{font-family:var(--ff-m);font-size:.6rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;border:1px solid rgba(212,160,23,.45);color:var(--gold);padding:.22rem .6rem;border-radius:4px}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeIn 1s ease 1.2s both}
+.hero-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.45));animation:float 2.4s ease-in-out infinite}
+.hero-scroll-txt{font-family:var(--ff-m);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* SECTION COMMON */
+.sec{padding:6.5rem 3rem}
+.max-w{max-width:1200px;margin:0 auto}
+.sec-eye{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem}
+.eye-line{width:24px;height:2px;background:var(--gold)}
+.eye-txt{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h2.sh2{font-family:var(--ff-d);font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:600;line-height:1.1;letter-spacing:-.025em;color:var(--ink)}
+h2.sh2 em{font-style:italic;color:var(--olive2)}
+.sec-sub{font-size:.97rem;font-weight:300;color:var(--muted);line-height:1.85;max-width:440px}
+
+/* CATEGORIES */
+.cats-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.cat-card{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:var(--t);box-shadow:var(--sh1)}
+.cat-card:hover{transform:translateY(-5px) scale(1.01);box-shadow:var(--sh2)}
+.cat-card.active{outline:3px solid var(--gold);outline-offset:2px}
+.cat-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;filter:saturate(.9) brightness(.85)}
+.cat-card:hover .cat-bg{transform:scale(1.06)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,28,58,.85) 0%,rgba(15,28,58,.25) 55%,transparent 100%)}
+.cat-card.active .cat-overlay{background:linear-gradient(to top,rgba(26,74,49,.9) 0%,rgba(26,74,49,.35) 55%,transparent 100%)}
+.cat-body{position:absolute;bottom:0;left:0;right:0;padding:1.6rem;display:flex;justify-content:space-between;align-items:flex-end}
+.cat-name{font-family:var(--ff-d);font-size:1.4rem;font-weight:600;color:#fff;line-height:1.15;letter-spacing:-.01em;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.cat-count{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:var(--ff-m);font-size:.65rem;letter-spacing:.06em;padding:.28rem .65rem;border-radius:100px;backdrop-filter:blur(4px);white-space:nowrap}
+.cat-card.active .cat-count{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.cat-badge{position:absolute;top:1rem;left:1rem;background:rgba(253,250,244,.12);border:1px solid rgba(253,250,244,.25);color:rgba(253,250,244,.9);font-size:1.4rem;width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+
+/* PRODUCTS */
+.prod-toolbar{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.srch{display:flex;align-items:center;gap:.6rem;background:var(--warm);border:1.5px solid var(--border);border-radius:var(--r);padding:.62rem 1rem;flex:1;min-width:200px;max-width:320px;transition:var(--t)}
+.srch:focus-within{border-color:var(--olive);box-shadow:0 0 0 3px rgba(31,74,49,.1)}
+.srch input{border:none;background:transparent;font-family:var(--ff-b);font-size:.88rem;color:var(--ink);outline:none;width:100%}
+.srch input::placeholder{color:var(--muted)}
+.chips{display:flex;gap:.45rem;flex-wrap:wrap}
+.chip{font-size:.72rem;font-weight:500;letter-spacing:.04em;padding:.38rem .88rem;border-radius:100px;border:1.5px solid var(--border);background:var(--warm);color:var(--muted);cursor:pointer;transition:var(--t)}
+.chip:hover{border-color:var(--olive);color:var(--olive)}.chip.active{background:var(--olive2);border-color:var(--olive2);color:var(--cream)}
+.pcnt{font-family:var(--ff-m);font-size:.72rem;color:var(--muted);margin-left:auto}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.5rem}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:var(--t)}
+.pcard:hover{box-shadow:var(--sh2);transform:translateY(-4px);border-color:transparent}
+.pcard-img{height:210px;position:relative;overflow:hidden;background:var(--cream)}
+.pcard-photo{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.pcard:hover .pcard-photo{transform:scale(1.04)}
+.pcard-emoji{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative}
+.pcat-tag{position:absolute;top:12px;left:12px;z-index:2;background:rgba(253,250,244,.92);color:var(--olive);font-family:var(--ff-m);font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .7rem;border-radius:5px;backdrop-filter:blur(4px)}
+.pbody{padding:1.5rem}
+.pname{font-family:var(--ff-d);font-size:1.12rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.01em;line-height:1.3}
+.pdesc{font-size:.82rem;font-weight:300;color:var(--muted);line-height:1.72;margin-bottom:1.2rem}
+.pfoot{display:flex;justify-content:space-between;align-items:center}
+.porigin{font-family:var(--ff-m);font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+.btn-inq{background:transparent;border:1.5px solid var(--olive);color:var(--olive);padding:.42rem 1rem;border-radius:6px;font-size:.76rem;font-weight:600;letter-spacing:.03em;transition:var(--t)}
+.btn-inq:hover{background:var(--olive2);color:var(--cream)}
+.skel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.skel-img,.skel-ln{background:linear-gradient(90deg,var(--border) 0%,rgba(248,244,235,.95) 50%,var(--border) 100%);background-size:600px 100%;animation:shimmer 1.5s ease infinite}
+.skel-img{height:210px}
+.skel-bd{padding:1.5rem;display:flex;flex-direction:column;gap:.8rem}
+.skel-ln{border-radius:4px}
+.empty-p{grid-column:1/-1;padding:5rem 2rem;text-align:center}
+.empty-p-ico{font-size:3rem;margin-bottom:.9rem;opacity:.4}
+.empty-p h3{font-family:var(--ff-d);font-size:1.4rem;color:var(--ink3);margin-bottom:.3rem}
+.empty-p p{font-size:.85rem;color:var(--muted)}
+
+/* WHY */
+.why-sec{background:var(--ink)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;min-height:660px}
+.why-img{position:relative;overflow:hidden;min-height:480px}
+.why-img-bg{position:absolute;inset:0;background-image:url('products.jpg');background-size:cover;background-position:center;filter:saturate(.75) brightness(.72);transition:transform .6s ease}
+.why-sec:hover .why-img-bg{transform:scale(1.025)}
+.why-img-ov{position:absolute;inset:0;background:linear-gradient(to right,transparent 30%,rgba(15,28,58,.8) 100%)}
+.why-float{position:absolute;bottom:2.5rem;left:2rem;background:rgba(253,250,244,.08);border:1px solid rgba(253,250,244,.14);border-radius:var(--r2);padding:1.5rem;backdrop-filter:blur(10px);max-width:230px}
+.why-float-n{font-family:var(--ff-d);font-size:3rem;font-weight:700;color:var(--gold2);line-height:1;letter-spacing:-.04em}
+.why-float-l{font-size:.78rem;color:rgba(246,242,234,.5);margin-top:.3rem;line-height:1.55}
+.why-content{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.why-content .eye-line{background:var(--gold2)}
+.why-content .eye-txt{color:var(--gold2)}
+.why-content h2.sh2{color:var(--cream)}
+.why-content h2.sh2 em{color:var(--gold2)}
+.why-content .sec-sub{color:rgba(246,242,234,.48)}
+.why-feats{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.1rem}
+.why-feat{display:flex;gap:1.1rem;align-items:flex-start;padding:1.3rem;border-radius:var(--r2);background:rgba(246,242,234,.04);border:1px solid rgba(246,242,234,.1);transition:var(--t)}
+.why-feat:hover{background:rgba(246,242,234,.1);border-color:rgba(212,160,23,.2)}
+.why-feat-ico{width:44px;height:44px;min-width:44px;border-radius:10px;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.25);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.why-ft{font-family:var(--ff-d);font-size:1rem;font-weight:600;color:var(--cream);margin-bottom:.25rem;letter-spacing:-.01em}
+.why-fd{font-size:.82rem;font-weight:300;color:rgba(246,242,234,.5);line-height:1.7}
+.why-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(246,242,234,.08)}
+.why-stat{padding:2.5rem 2rem;border-right:1px solid rgba(246,242,234,.08);transition:var(--t)}
+.why-stat:last-child{border-right:none}
+.why-stat:hover{background:rgba(246,242,234,.03)}
+.why-stat-n{font-family:var(--ff-d);font-size:2.6rem;font-weight:700;color:var(--gold2);letter-spacing:-.04em;line-height:1}
+.why-stat-d{font-size:.78rem;font-weight:300;color:rgba(246,242,234,.38);margin-top:.5rem;line-height:1.6}
+
+/* TRUST */
+.trust{background:var(--cream);padding:3.5rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.trust-lbl{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.trust-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.trust-item{display:flex;align-items:center;gap:.55rem;background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:.65rem 1rem;transition:var(--t)}
+.trust-item:hover{border-color:var(--olive3);box-shadow:var(--sh1)}
+.trust-ico{font-size:1.1rem}
+.trust-txt{font-family:var(--ff-m);font-size:.7rem;font-weight:500;letter-spacing:.06em;color:var(--ink2)}
+
+/* INQUIRY */
+.inq-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start}
+.inq-perks{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.1rem}
+.perk{display:flex;gap:.9rem;align-items:flex-start}
+.perk-ico{width:36px;height:36px;min-width:36px;border-radius:9px;background:rgba(42,95,62,.08);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.ptitle{font-weight:600;font-size:.88rem;color:var(--ink);margin-bottom:.15rem}
+.pdesc2{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.65}
+.inq-form-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:2.5rem;box-shadow:var(--sh1)}
+.fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.form-full{grid-column:1/-1}
+.fg{display:flex;flex-direction:column;gap:.42rem}
+.fl{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fi,.fs,.ft{background:var(--cream);border:1.5px solid var(--border);border-radius:var(--r);padding:.72rem 1rem;font-family:var(--ff-b);font-size:.88rem;color:var(--ink);outline:none;width:100%;transition:var(--t);-webkit-appearance:none}
+.fi:focus,.fs:focus,.ft:focus{border-color:var(--olive2);box-shadow:0 0 0 3px rgba(42,95,62,.1);background:var(--warm)}
+.ft{resize:vertical;min-height:112px}
+.fs{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' fill='none' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%238C9AA8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.4rem;cursor:pointer}
+.btn-sub{width:100%;margin-top:.6rem;background:var(--olive2);color:var(--cream);padding:.92rem 2rem;border:none;border-radius:var(--r);font-size:.92rem;font-weight:600;letter-spacing:.03em;transition:var(--t)}
+.btn-sub:hover{background:var(--ink);box-shadow:0 6px 20px rgba(15,28,58,.25)}
+.btn-sub.loading{opacity:.7;pointer-events:none}
+.form-ok{text-align:center;padding:3.5rem 1.5rem;animation:scaleIn .35s ease}
+.form-ok-ico{font-size:3rem;margin-bottom:.9rem}
+.form-ok h3{font-family:var(--ff-d);font-size:1.6rem;font-weight:600;color:var(--olive2);margin-bottom:.4rem}
+.form-ok p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.75}
+.spin-ico{width:18px;height:18px;border:2px solid rgba(246,242,234,.3);border-top-color:var(--cream);border-radius:50%;animation:spin .6s linear infinite;display:inline-block}
+
+/* MODAL */
+.modal-ov{position:fixed;inset:0;z-index:2000;background:rgba(15,28,58,.65);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;animation:fadeIn .2s ease;padding:1rem}
+.modal{background:var(--warm);border-radius:var(--r2);padding:2.4rem;width:100%;max-width:500px;position:relative;animation:scaleIn .25s ease;max-height:90vh;overflow-y:auto;box-shadow:var(--sh3)}
+.modal-x{position:absolute;top:1.1rem;right:1.1rem;width:34px;height:34px;border-radius:50%;border:none;background:var(--cream);color:var(--muted);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:var(--t)}
+.modal-x:hover{background:var(--border);color:var(--ink)}
+.modal-phd{display:flex;gap:1rem;align-items:center;padding:.9rem;background:var(--cream);border-radius:var(--r);margin-bottom:1.8rem;border:1px solid var(--border)}
+.modal-thumb{width:52px;height:52px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0}
+.modal-thumb img{width:100%;height:100%;object-fit:cover}
+.modal-pname{font-family:var(--ff-d);font-size:1rem;font-weight:600;color:var(--ink)}
+.modal-pcat{font-family:var(--ff-m);font-size:.7rem;color:var(--muted);margin-top:.12rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:9998;background:var(--ink);color:var(--cream);padding:.9rem 1.6rem;border-radius:var(--r);font-size:.84rem;font-weight:500;display:flex;align-items:center;gap:.65rem;white-space:nowrap;box-shadow:var(--sh3);animation:fadeUp .3s ease}
+.tok{color:#74C480}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:2rem;right:2rem;z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.wa-tip{background:var(--ink);color:var(--cream);font-size:.76rem;font-weight:500;padding:.4rem .95rem;border-radius:6px;white-space:nowrap;opacity:0;transform:translateX(6px);transition:var(--t);pointer-events:none;box-shadow:var(--sh1)}
+.wa-fab:hover .wa-tip{opacity:1;transform:translateX(0)}
+.wa-wrap{position:relative}
+.wa-pulse{position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.3);animation:waPulse 2.2s ease-out infinite}
+.wa-btn{width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.45);transition:var(--t);position:relative;z-index:1}
+.wa-btn:hover{transform:scale(1.09);box-shadow:0 6px 26px rgba(37,211,102,.5)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:5.5rem 3rem 3rem}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.footer-desc{font-size:.84rem;font-weight:300;color:rgba(246,242,234,.45);line-height:1.9;max-width:240px;margin-top:1rem}
+.footer-col-h{font-family:var(--ff-m);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,234,.35);margin-bottom:1.3rem}
+.footer-links{display:flex;flex-direction:column;gap:.65rem}
+.footer-links a{font-size:.84rem;font-weight:300;color:rgba(246,242,234,.5);cursor:pointer;transition:color .18s}
+.footer-links a:hover{color:var(--gold2)}
+.footer-bot{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:2.5rem;border-top:1px solid rgba(246,242,234,.1);flex-wrap:wrap;gap:1rem}
+.footer-copy{font-family:var(--ff-m);font-size:.68rem;color:rgba(246,242,234,.25)}
+.footer-certs{display:flex;gap:.5rem;flex-wrap:wrap}
+.footer-cert{font-family:var(--ff-m);font-size:.6rem;border:1px solid rgba(246,242,234,.15);color:rgba(246,242,234,.3);padding:.22rem .6rem;border-radius:4px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}.rd4{transition-delay:.32s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-card{display:none}
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .why-inner{grid-template-columns:1fr}
+  .why-img{min-height:340px;max-height:340px}
+  .why-strip{grid-template-columns:1fr 1fr}
+  .why-stat{border-right:none;border-bottom:1px solid rgba(246,242,234,.08)}
+  .inq-grid{grid-template-columns:1fr;gap:3rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .sec{padding:5rem 2rem}
+}
+@media(max-width:768px){
+  .nav{padding:0 1.5rem}
+  .hero-inner{padding:3rem 1.5rem}
+  .hero-stats{gap:2rem}
+  .hero-btns{flex-direction:column}
+  h1.hero-h1{font-size:clamp(2.8rem,8vw,3.5rem)}
+  .cats-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .why-content{padding:3.5rem 1.5rem}
+  .why-strip{grid-template-columns:1fr 1fr}
+  .fg-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  footer{padding:4rem 1.5rem 2.5rem}
+  .trust{padding:2.5rem 1.5rem}
+  .nav-logo-tagline{display:none}
+}
+@media(max-width:480px){
+  .cats-grid{grid-template-columns:1fr 1fr}
+  .why-strip{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:1.5rem}
+  .nav-logo-brand{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<script>
+const API_BASE='./api.php';
+const WA_NUMBER='919876543210';
+const WA_MSG=encodeURIComponent('Hi, I would like to enquire about RelifeProducts food exports.');
+</script>
+
+<!-- ════════════ NAVBAR ════════════ -->
+<nav class="nav" id="main-nav">
+
+  <!-- ═══ LOGO — HTML/CSS rendered ═══ -->
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+<img src="relife.svg" alt="RelifeProducts logo" width="250px">
+    
+
+  </div>
+
+  <div class="nav-links">
+    <span class="nav-link" onclick="sid('categories')">Products</span>
+    <span class="nav-link" onclick="sid('why')">Why Us</span>
+    <span class="nav-link" onclick="sid('inquiry')">Contact</span>
+  </div>
+  <div class="nav-right">
+    <button class="nav-admin" onclick="window.open('admin/','_blank')">Admin ↗</button>
+    <button class="btn-cta" onclick="sid('inquiry')">Request a Quote</button>
+    <button class="nav-burger" id="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <span class="nav-link" onclick="sid('categories');toggleMenu()">Products</span>
+  <span class="nav-link" onclick="sid('why');toggleMenu()">Why Us</span>
+  <span class="nav-link" onclick="sid('inquiry');toggleMenu()">Contact</span>
+  <button class="btn-cta" onclick="sid('inquiry');toggleMenu()">Request a Quote</button>
+  <a style="font-size:.8rem;color:var(--muted)" href="admin/" target="_blank">Admin Portal ↗</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"><div class="hero-bg-img"></div></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker"><div class="hero-kicker-line"></div>Trusted B2B Food Export Partner</div>
+      <h1 class="hero-h1">Food ingredients<br/>sourced with<br/><em>integrity</em></h1>
+      <p class="hero-desc">RelifeProducts supplies premium bulk food commodities — cereals, spices, sweeteners, fats, confectionery and ready-to-eat — to manufacturers and distributors across 40+ countries.</p>
+      <div class="hero-btns">
+        <button class="btn-hp" onclick="sid('categories')">Explore Products</button>
+        <button class="btn-ho" onclick="sid('inquiry')">Request a Quote</button>
+      </div>
+      <div class="hero-stats">
+  <div><div class="hero-stat-n">5+</div><div class="hero-stat-l">Countries</div></div>
+  <div><div class="hero-stat-n">15yr</div><div class="hero-stat-l">Industry Experience</div></div>
+  <div><div class="hero-stat-n">&lt;24h</div><div class="hero-stat-l">RFQ Response</div></div>
+  <div><div class="hero-stat-n">100%</div><div class="hero-stat-l">Verified Suppliers</div></div>
+</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-hd">Product Categories</div>
+      <div id="hero-cat-rows"></div>
+      <div class="hero-divider"></div>
+      <div class="hero-certs">
+        <span class="hero-cert">ISO 22000</span>
+        <span class="hero-cert">HACCP</span>
+        <span class="hero-cert">FSSAI</span>
+        <span class="hero-cert">APEDA</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-txt">Scroll</div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec" id="categories" style="background:var(--warm)">
+  <div class="max-w">
+    <div class="cats-hd reveal">
+      <div>
+        <div class="sec-eye"><div class="eye-line"></div><span class="eye-txt">Our Range</span></div>
+        <h2 class="sh2">Six categories,<br/><em>one trusted partner</em></h2>
+      </div>
+      <p class="sec-sub">From grain to shelf — certified quality, flexible packing, and complete export documentation on every order.</p>
+    </div>
+    <div class="cats-grid" id="cats-grid"></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="products" style="background:var(--cream)">
+  <div class="max-w">
+    <div class="sec-eye reveal"><div class="eye-line"></div><span class="eye-txt">Product Catalogue</span></div>
+    <h2 class="sh2 reveal" id="prods-heading" style="margin-bottom:.5rem">All Products</h2>
+    <p class="sec-sub reveal" style="margin-bottom:2.5rem">No prices listed — contact us for bulk pricing, samples, and technical specifications.</p>
+    <div class="prod-toolbar reveal">
+      <div class="srch">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input id="srch-inp" placeholder="Search products…" oninput="renderProds()"/>
+      </div>
+      <div class="chips" id="chips-wrap"></div>
+      <span class="pcnt" id="pcnt"></span>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <div class="skel-card"><div class="skel-img"></div><div class="skel-bd"><div class="skel-ln" style="height:18px;width:65%"></div><div class="skel-ln" style="height:13px;width:88%"></div><div class="skel-ln" style="height:13px;width:50%"></div></div></div>
+      <div class="skel-card"><div class="skel-img"></div><div class="skel-bd"><div class="skel-ln" style="height:18px;width:72%"></div><div class="skel-ln" style="height:13px;width:82%"></div><div class="skel-ln" style="height:13px;width:55%"></div></div></div>
+      <div class="skel-card"><div class="skel-img"></div><div class="skel-bd"><div class="skel-ln" style="height:18px;width:60%"></div><div class="skel-ln" style="height:13px;width:78%"></div><div class="skel-ln" style="height:13px;width:48%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-sec" id="why">
+  <div class="why-inner">
+    <div class="why-img">
+      <div class="why-img-bg"></div>
+      <div class="why-img-ov"></div>
+      <div class="why-float">
+        <div class="why-float-n">&lt;24h</div>
+        <div class="why-float-l">Response time on every incoming RFQ</div>
+      </div>
+    </div>
+    <div class="why-content">
+      <div class="sec-eye reveal"><div class="eye-line"></div><span class="eye-txt">Why RelifeProducts</span></div>
+      <h2 class="sh2 reveal">Built for <em>two-way trade</em><br/>across global markets</h2>
+      <p class="sec-sub reveal" style="margin-top:.5rem">We are not a marketplace. We connect buyers and suppliers across India, New Zealand, and beyond — handling sourcing, compliance, and logistics so you don't have to.</p>
+      <div class="why-feats">
+        <div class="why-feat reveal rd1"><div class="why-feat-ico">🌏</div><div><div class="why-ft">India ↔ NZ & Beyond</div><div class="why-fd">We move products in both directions — sourcing from India for international buyers and bringing global products into key markets.</div></div></div>
+        <div class="why-feat reveal rd2"><div class="why-feat-ico">📦</div><div><div class="why-ft">Flexible Pack Formats</div><div class="why-fd">Bulk, retail-ready, and white-label packaging adapted to your market's requirements.</div></div></div>
+        <div class="why-feat reveal rd3"><div class="why-feat-ico">🚢</div><div><div class="why-ft">End-to-End Documentation</div><div class="why-fd">Import/export paperwork, compliance certificates, and customs documentation handled in-house.</div></div></div>
+        <div class="why-feat reveal rd4"><div class="why-feat-ico">🤝</div><div><div class="why-ft">Long-Term Partnerships</div><div class="why-fd">Preferred pricing for repeat buyers. Framework agreements available for high-volume trade.</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="why-strip">
+    <div class="why-stat reveal"><div class="why-stat-n">5+</div><div class="why-stat-d">Countries actively traded across</div></div>
+    <div class="why-stat reveal rd1"><div class="why-stat-n">15yr</div><div class="why-stat-d">Combined industry experience in global trade</div></div>
+    <div class="why-stat reveal rd2"><div class="why-stat-n">2-way</div><div class="why-stat-d">Import & export across every market we serve</div></div>
+    <div class="why-stat reveal rd3"><div class="why-stat-n">&lt;24h</div><div class="why-stat-d">Average response time to all incoming RFQs</div></div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<div class="trust">
+  <div class="trust-in">
+    <div class="trust-lbl">Certifications &amp; Approvals</div>
+    <div class="trust-row">
+      <div class="trust-item"><span class="trust-ico">🏅</span><span class="trust-txt">ISO 22000</span></div>
+      <div class="trust-item"><span class="trust-ico">✅</span><span class="trust-txt">HACCP Certified</span></div>
+      <div class="trust-item"><span class="trust-ico">🇮🇳</span><span class="trust-txt">FSSAI Licensed</span></div>
+      <div class="trust-item"><span class="trust-ico">📋</span><span class="trust-txt">APEDA Registered</span></div>
+      <div class="trust-item"><span class="trust-ico">🌿</span><span class="trust-txt">Organic Certified</span></div>
+      <div class="trust-item"><span class="trust-ico">🔬</span><span class="trust-txt">Lab Tested</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- INQUIRY -->
+<section class="sec" id="inquiry" style="background:var(--warm)">
+  <div class="max-w">
+    <div class="inq-grid">
+      <div>
+        <div class="sec-eye reveal"><div class="eye-line"></div><span class="eye-txt">Trade Enquiries</span></div>
+        <h2 class="sh2 reveal">Reach out.<br/><em>We respond fast.</em></h2>
+        <p class="sec-sub reveal" style="margin-top:.5rem">Submit your requirements and our export team will respond within 24 business hours.</p>
+        <div class="inq-perks">
+          <div class="perk reveal rd1"><div class="perk-ico">📋</div><div><div class="ptitle">No minimum to enquire</div><div class="pdesc2">Tell us your requirement and we will work from there.</div></div></div>
+          <div class="perk reveal rd2"><div class="perk-ico">🎯</div><div><div class="ptitle">Custom specifications</div><div class="pdesc2">Retail, foodservice, or industrial — we match your spec exactly.</div></div></div>
+          <div class="perk reveal rd3"><div class="perk-ico">🧪</div><div><div class="ptitle">Samples on request</div><div class="pdesc2">Qualified buyers can request pre-shipment product samples.</div></div></div>
+          <div class="perk reveal rd4"><div class="perk-ico">👤</div><div><div class="ptitle">Dedicated export manager</div><div class="pdesc2">One point of contact for every interaction, every time.</div></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="inq-form-wrap">
+          <div id="inq-body">
+            <div class="fg-grid">
+              <div class="fg"><label class="fl">Company Name *</label><input class="fi" id="f-company" placeholder="Your Company Ltd."/></div>
+              <div class="fg"><label class="fl">Contact Name *</label><input class="fi" id="f-name" placeholder="Full Name"/></div>
+              <div class="fg"><label class="fl">Email Address *</label><input class="fi" id="f-email" type="email" placeholder="you@company.com"/></div>
+              <div class="fg"><label class="fl">Phone / WhatsApp</label><input class="fi" id="f-phone" placeholder="+1 555 000 0000"/></div>
+              <div class="fg"><label class="fl">Country *</label><input class="fi" id="f-country" placeholder="Importing country"/></div>
+              <div class="fg"><label class="fl">Product Category</label>
+                <select class="fs" id="f-product">
+                  <option value="">Select a category…</option>
+                  <option>Cereals &amp; Grains</option><option>Spices &amp; Herbs</option>
+                  <option>Confectionery</option><option>Sweeteners</option>
+                  <option>Fats &amp; Oils</option><option>Ready-to-Eat</option>
+                  <option>Other / Not listed</option>
+                </select>
+              </div>
+              <div class="fg form-full"><label class="fl">Estimated Quantity / Volume</label><input class="fi" id="f-qty" placeholder="e.g. 20 MT per month, 1 x 40ft container"/></div>
+              <div class="fg form-full"><label class="fl">Message / Requirements</label><textarea class="ft" id="f-msg" placeholder="Product spec, certifications needed, incoterms, delivery port, etc."></textarea></div>
+            </div>
+            <button class="btn-sub" id="inq-btn" onclick="submitForm()">Send Enquiry →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+
+      <!-- FOOTER LOGO -->
+      <div class="footer-logo">
+        <img src="relife.svg" alt="RelifeProducts logo" width="230px">
+
+
+
+       
+      </div>
+
+      <p class="footer-desc">Premium bulk food ingredients. Certified quality. Reliable exports. Global reach.</p>
+    </div>
+    <div>
+      <div class="footer-col-h">Products</div>
+      <div class="footer-links">
+        <a onclick="filterAndScroll('Cereals & Grains')">Cereals &amp; Grains</a>
+        <a onclick="filterAndScroll('Spices & Herbs')">Spices &amp; Herbs</a>
+        <a onclick="filterAndScroll('Confectionery')">Confectionery</a>
+        <a onclick="filterAndScroll('Sweeteners')">Sweeteners</a>
+        <a onclick="filterAndScroll('Fats & Oils')">Fats &amp; Oils</a>
+        <a onclick="filterAndScroll('Ready-to-Eat')">Ready-to-Eat</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-h">Company</div>
+      <div class="footer-links">
+        <a onclick="sid('why')">Why Us</a>
+        <a onclick="sid('inquiry')">Request a Quote</a>
+        <a href="admin/" target="_blank">Admin Portal</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-h">Contact</div>
+      <div class="footer-links">
+        <a href="mailto:exports@relifeproducts.com">exports@relifeproducts.com</a>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+        <a>India · UAE · Singapore</a>
+        <a onclick="openWA()">WhatsApp Us ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <div class="footer-copy">© 2025 RelifeProducts. All rights reserved.</div>
+    <div class="footer-certs">
+      <span class="footer-cert">ISO 22000</span><span class="footer-cert">HACCP</span>
+      <span class="footer-cert">FSSAI</span><span class="footer-cert">APEDA</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<div class="wa-fab">
+  <div class="wa-tip">Chat on WhatsApp</div>
+  <div class="wa-wrap">
+    <div class="wa-pulse"></div>
+    <button class="wa-btn" onclick="openWA()" title="WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" style="display:none" class="modal-ov" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="modal-phd" id="modal-hd"></div>
+    <div class="sec-eye" style="margin-bottom:.8rem"><div class="eye-line"></div><span class="eye-txt">Quick Enquiry</span></div>
+    <div class="fg-grid">
+      <div class="fg"><label class="fl">Company / Name *</label><input class="fi" id="m-company" placeholder="Your company or name"/></div>
+      <div class="fg"><label class="fl">Email *</label><input class="fi" id="m-email" type="email" placeholder="you@company.com"/></div>
+      <div class="fg form-full"><label class="fl">Phone / WhatsApp</label><input class="fi" id="m-phone" placeholder="+1 555 000 0000"/></div>
+      <div class="fg form-full"><label class="fl">Requirements</label><textarea class="ft" id="m-msg" placeholder="Quantity, spec, destination…" style="min-height:80px"></textarea></div>
+    </div>
+    <button class="btn-sub" style="margin-top:1rem" id="m-btn" onclick="submitModal()">Send Enquiry →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" style="display:none"><span class="tok">✓</span><span id="toast-msg"></span></div>
+
+<script>
+const CATS=[
+  {key:'Cereals & Grains',ico:'🌾',img:'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=75',bg:'#2E2618'},
+  {key:'Spices & Herbs',  ico:'🌶️',img:'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=75',bg:'#2E1A14'},
+  {key:'Confectionery',  ico:'🍬',img:'https://images.unsplash.com/photo-1549007953-2f2dc0b24019?w=800&q=75',bg:'#1E1824'},
+  {key:'Sweeteners',     ico:'🍯',img:'https://images.unsplash.com/photo-1558642891-54be180ea339?w=800&q=75',bg:'#2A2010'},
+  {key:'Fats & Oils',    ico:'🫙',img:'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&q=75',bg:'#181E14'},
+  {key:'Ready-to-Eat',   ico:'🥗',img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=75',bg:'#141E18'},
+];
+const PROD_IMGS={
+  'Cereals & Grains':['https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=600&q=75','https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=75','https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=600&q=75'],
+  'Spices & Herbs':  ['https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=75','https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=600&q=75','https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=600&q=75'],
+  'Confectionery':   ['https://images.unsplash.com/photo-1549007953-2f2dc0b24019?w=600&q=75','https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=75','https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?w=600&q=75'],
+  'Sweeteners':      ['https://images.unsplash.com/photo-1558642891-54be180ea339?w=600&q=75','https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600&q=75','https://images.unsplash.com/photo-1559181567-c3190ca9be46?w=600&q=75'],
+  'Fats & Oils':     ['https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=75','https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&q=75','https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?w=600&q=75'],
+  'Ready-to-Eat':    ['https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=75','https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&q=75','https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=75'],
+};
+
+let PRODS=[],activeCat='All',modalProd=null;
+document.addEventListener('DOMContentLoaded',()=>{buildTicker();loadProds();buildChips();initReveal();initNav();});
+
+function buildTicker(){
+  const items=['Cereals & Grains','Spices & Herbs','Confectionery','Sweeteners','Fats & Oils','Ready-to-Eat','ISO 22000','HACCP Certified','FSSAI Approved','APEDA Registered','40+ Countries','B2B Food Exports'];
+  const d=[...items,...items];
+  document.getElementById('ticker-track').innerHTML=d.map(i=>`<span class="ticker-item"><span class="ticker-dot"></span>${i}</span>`).join('');
+}
+
+async function loadProds(){
+  try{const r=await fetch(API_BASE+'/products');const j=await r.json();PRODS=j.ok?j.data:[];}catch(e){PRODS=[];}
+  document.getElementById('hero-sku').textContent=PRODS.length+'+';
+  buildHeroRows();buildCatsGrid();renderProds();
+}
+
+function getImg(p,idx){if(p.image&&p.image.trim())return p.image;const pool=PROD_IMGS[p.category]||PROD_IMGS['Cereals & Grains'];return pool[idx%pool.length];}
+function catMeta(k){return CATS.find(c=>c.key===k)||CATS[0]}
+
+function buildHeroRows(){
+  document.getElementById('hero-cat-rows').innerHTML=CATS.map(c=>{
+    const n=PRODS.filter(p=>p.category===c.key).length;
+    return `<div class="hero-cat-row" onclick="filterAndScroll('${esc(c.key)}')"><div class="hero-cat-left"><div class="hero-cat-ico"><img src="${c.img}" alt="" loading="lazy"/></div><span class="hero-cat-name">${esc(c.key)}</span></div><span class="hero-cat-arrow">${n} →</span></div>`;
+  }).join('');
+}
+
+function buildCatsGrid(){
+  document.getElementById('cats-grid').innerHTML=CATS.map(c=>{
+    const n=PRODS.filter(p=>p.category===c.key).length;
+    return `<div class="cat-card${activeCat===c.key?' active':''}" onclick="setCategory('${esc(c.key)}')"><div class="cat-bg" style="background-image:url('${c.img}')"></div><div class="cat-overlay"></div><div class="cat-badge">${c.ico}</div><div class="cat-body"><div class="cat-name">${esc(c.key)}</div><div class="cat-count">${n} products</div></div></div>`;
+  }).join('');
+  initReveal();
+}
+
+function buildChips(){
+  document.getElementById('chips-wrap').innerHTML=
+    CATS.map(c=>`<span class="chip${activeCat===c.key?' active':''}" onclick="setCategory('${esc(c.key)}')">${c.ico} ${c.key}</span>`).join('')+
+    (activeCat!=='All'?`<span class="chip" onclick="setCategory('All')" style="border-style:dashed">✕ Clear</span>`:'');
+}
+
+function setCategory(cat){activeCat=cat;document.getElementById('prods-heading').textContent=cat==='All'?'All Products':cat;buildCatsGrid();buildChips();renderProds();sid('products');}
+
+function renderProds(){
+  const q=(document.getElementById('srch-inp')?.value||'').toLowerCase();
+  const fi=PRODS.filter(p=>{const mc=activeCat==='All'||p.category===activeCat;const ms=!q||[p.name,p.desc,p.category,p.origin].join(' ').toLowerCase().includes(q);return mc&&ms;});
+  document.getElementById('pcnt').textContent=fi.length+' product'+(fi.length!==1?'s':'');
+  if(!fi.length){document.getElementById('pgrid').innerHTML=`<div class="empty-p"><div class="empty-p-ico">🔍</div><h3>No products found</h3><p>Try a different search or category filter.</p></div>`;return;}
+  const ci={};
+  document.getElementById('pgrid').innerHTML=fi.map(p=>{
+    const idx=ci[p.category]=(ci[p.category]||0);ci[p.category]++;
+    const imgSrc=getImg(p,idx);const meta=catMeta(p.category);
+    return `<div class="pcard"><div class="pcard-img" style="background:${meta.bg}"><img class="pcard-photo" src="${imgSrc}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="pcard-emoji" style="display:none;background:${meta.bg}">${p.emoji||'🌿'}</div><div class="pcat-tag">${esc(p.category)}</div></div><div class="pbody"><div class="pname">${esc(p.name)}</div><div class="pdesc">${esc(p.desc)}</div><div class="pfoot"><div class="porigin">📍 ${esc(p.origin||'New Zealand')}</div><button class="btn-inq" onclick='openModal(${JSON.stringify(JSON.stringify(p))})'>Inquire →</button></div></div></div>`;
+  }).join('');
+}
+
+async function submitForm(){
+  const btn=document.getElementById('inq-btn');
+  const co=document.getElementById('f-company').value.trim();const na=document.getElementById('f-name').value.trim();const em=document.getElementById('f-email').value.trim();const ct=document.getElementById('f-country').value.trim();
+  if(!co||!na||!em||!ct){toast('Please fill all required fields.');return}
+  if(!vEmail(em)){toast('Please enter a valid email.');return}
+  btn.innerHTML='<span class="spin-ico"></span> Sending…';btn.classList.add('loading');
+  try{
+    const r=await fetch(API_BASE+'/queries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({company:co,name:na,email:em,phone:document.getElementById('f-phone').value.trim(),country:ct,product:document.getElementById('f-product').value,quantity:document.getElementById('f-qty').value.trim(),message:document.getElementById('f-msg').value.trim()})});
+    const j=await r.json();
+    if(j.ok){document.getElementById('inq-body').innerHTML=`<div class="form-ok"><div class="form-ok-ico">✅</div><h3>Enquiry Received!</h3><p>Our export team will respond within 24 business hours.<br/>Thank you for contacting RelifeProducts.</p><button class="btn-sub" style="margin-top:1.5rem;max-width:200px" onclick="location.reload()">Send Another →</button></div>`;}
+    else{toast('Error: '+(j.error||'Please try again.'));btn.innerHTML='Send Enquiry →';btn.classList.remove('loading');}
+  }catch(e){toast('Network error — please try again.');btn.innerHTML='Send Enquiry →';btn.classList.remove('loading');}
+}
+
+function openModal(pj){
+  modalProd=JSON.parse(pj);const meta=catMeta(modalProd.category);const hi=modalProd.image&&modalProd.image.trim();
+  document.getElementById('modal-hd').innerHTML=`<div class="modal-thumb" style="background:${meta.bg}">${hi?`<img src="${modalProd.image}" alt=""/>`:(modalProd.emoji||'🌿')}</div><div><div class="modal-pname">${esc(modalProd.name)}</div><div class="modal-pcat">${esc(modalProd.category)}</div></div>`;
+  ['m-company','m-email','m-phone','m-msg'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});
+  document.getElementById('m-btn').innerHTML='Send Enquiry →';document.getElementById('m-btn').classList.remove('loading');
+  document.getElementById('modal').style.display='flex';document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('modal').style.display='none';document.body.style.overflow='';}
+
+async function submitModal(){
+  const btn=document.getElementById('m-btn');const co=document.getElementById('m-company').value.trim();const em=document.getElementById('m-email').value.trim();
+  if(!co||!em){toast('Please enter company and email.');return}if(!vEmail(em)){toast('Invalid email address.');return}
+  btn.innerHTML='<span class="spin-ico"></span>';btn.classList.add('loading');
+  try{
+    const r=await fetch(API_BASE+'/queries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({company:co,email:em,phone:document.getElementById('m-phone').value.trim(),message:document.getElementById('m-msg').value.trim()+(modalProd?'\n\nProduct: '+modalProd.name:''),product:modalProd?.category||'',name:'',country:'',quantity:''})});
+    const j=await r.json();
+    if(j.ok){closeModal();toast('Enquiry sent! We will respond within 24 hours.');}
+    else{toast('Error: '+(j.error||'Please try again.'));btn.innerHTML='Send Enquiry →';btn.classList.remove('loading');}
+  }catch(e){toast('Network error.');btn.innerHTML='Send Enquiry →';btn.classList.remove('loading');}
+}
+
+function openWA(){window.open('https://wa.me/'+WA_NUMBER+'?text='+WA_MSG,'_blank')}
+function sid(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+function filterAndScroll(cat){setCategory(cat);}
+function vEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function toast(msg,ms=3500){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;t.style.display='flex';clearTimeout(window._tt);window._tt=setTimeout(()=>t.style.display='none',ms)}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
+function initReveal(){const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal:not(.visible)').forEach(el=>o.observe(el));}
+function initNav(){const nav=document.getElementById('main-nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60),{passive:true});}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

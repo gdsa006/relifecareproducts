@@ -1,0 +1,172 @@
+[
+    {
+        "id": "p_69bd3a6861be2",
+        "name": "asdsadsadasd",
+        "category": "Cereals & Grains",
+        "emoji": "🌿",
+        "desc": "fadfadssadas",
+        "origin": "dsafda",
+        "image": "uploads\/img_69bd3a6854b47.jpg",
+        "created": "2026-03-20 12:15:36"
+    },
+    {
+        "id": "p_69bd3a09e73fc",
+        "name": "asdsad",
+        "category": "Cereals & Grains",
+        "emoji": "🌿",
+        "desc": "fadfads",
+        "origin": "dsafda",
+        "image": "",
+        "created": "2026-03-20 12:14:01"
+    },
+    {
+        "id": "p_001",
+        "name": "Premium Basmati Rice",
+        "category": "Cereals & Grains",
+        "emoji": "🌾",
+        "desc": "Long-grain aromatic basmati, aged 2 years for optimal fragrance and cooking quality.",
+        "origin": "Punjab, India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_002",
+        "name": "Organic Quinoa",
+        "category": "Cereals & Grains",
+        "emoji": "🌿",
+        "desc": "Certified organic white quinoa, triple-washed and ready for global food brands.",
+        "origin": "Bolivia",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_003",
+        "name": "Rolled Oats (Jumbo)",
+        "category": "Cereals & Grains",
+        "emoji": "🥣",
+        "desc": "Large-flake jumbo oats, ideal for private label breakfast and snack manufacturing.",
+        "origin": "India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_004",
+        "name": "Turmeric Powder",
+        "category": "Spices & Herbs",
+        "emoji": "🟡",
+        "desc": "High-curcumin turmeric (5%+), steam sterilised, food-grade certified.",
+        "origin": "Erode, India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_005",
+        "name": "Black Pepper (Whole)",
+        "category": "Spices & Herbs",
+        "emoji": "⚫",
+        "desc": "Malabar grade black pepper, 550GL density, suitable for retail and processing.",
+        "origin": "Kerala, India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_006",
+        "name": "Cardamom (Green)",
+        "category": "Spices & Herbs",
+        "emoji": "🌱",
+        "desc": "Bold size green cardamom, hand-sorted, intense aroma for premium applications.",
+        "origin": "Guatemala \/ India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_007",
+        "name": "Dark Chocolate Compound",
+        "category": "Confectionery",
+        "emoji": "🍫",
+        "desc": "55% cocoa dark compound for coating, moulding and confectionery production.",
+        "origin": "Belgium \/ India blend",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_008",
+        "name": "Glucose Syrup (DE42)",
+        "category": "Confectionery",
+        "emoji": "🍬",
+        "desc": "DE42 glucose syrup in 280kg barrels, suitable for candy and gum manufacture.",
+        "origin": "India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_009",
+        "name": "Raw Cane Sugar (ICUMSA 45)",
+        "category": "Sweeteners",
+        "emoji": "🍯",
+        "desc": "ICUMSA 45 and 150 grades available in bulk; full export documentation.",
+        "origin": "Brazil \/ India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_010",
+        "name": "Stevia Extract (RA97)",
+        "category": "Sweeteners",
+        "emoji": "🌼",
+        "desc": "High-purity rebaudioside A (97%) stevia, non-GMO, suitable for beverages.",
+        "origin": "China \/ India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_011",
+        "name": "Palm Olein (RBD)",
+        "category": "Fats & Oils",
+        "emoji": "🫙",
+        "desc": "Refined, bleached, deodorised palm olein for frying, baking and food service.",
+        "origin": "Malaysia \/ Indonesia",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_012",
+        "name": "High Oleic Sunflower Oil",
+        "category": "Fats & Oils",
+        "emoji": "🌻",
+        "desc": "Extended shelf life, ideal for snack and fried food sectors.",
+        "origin": "Ukraine \/ India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_013",
+        "name": "Instant Noodles (OEM)",
+        "category": "Ready-to-Eat",
+        "emoji": "🍜",
+        "desc": "Private label instant noodles in 65g-100g packs; custom flavour sachets available.",
+        "origin": "India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_014",
+        "name": "Alphonso Mango Pulp",
+        "category": "Ready-to-Eat",
+        "emoji": "🥭",
+        "desc": "Aseptic Alphonso mango pulp, Brix 16-17, in 850g tins or 210kg aseptic bags.",
+        "origin": "Ratnagiri, India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    },
+    {
+        "id": "p_015",
+        "name": "Coriander Seeds (Eagle)",
+        "category": "Spices & Herbs",
+        "emoji": "🍃",
+        "desc": "Eagle-grade whole coriander, low moisture, fumigation-free on request.",
+        "origin": "Rajasthan, India",
+        "image": "",
+        "created": "2026-03-20 12:06:41"
+    }
+]
