@@ -46,7 +46,6 @@ img{max-width:100%;display:block}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes waPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.7);opacity:0}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes scaleIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
@@ -96,21 +95,11 @@ body::before{
 .mobile-menu .nav-link{font-size:1rem}
 .mobile-menu .btn-quote{text-align:center;padding:.75rem}
 
-/* ═══ TICKER ═══ */
-.ticker{
-  position:fixed;top:var(--nav-h);left:0;right:0;z-index:800;
-  height:34px;background:var(--navy);overflow:hidden;display:flex;align-items:center;
-}
-.ticker-track{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
-.ticker-item{
-  font-family:var(--ff-c);font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(250,246,238,.45);padding:0 1.8rem;display:flex;align-items:center;gap:.7rem;
-}
-.ticker-dot{width:2.5px;height:2.5px;border-radius:50%;background:var(--gold3)}
+
 
 /* ═══ HERO ═══ */
 .hero{
-  padding-top:calc(var(--nav-h) + 34px);
+  padding-top:var(--nav-h);
   min-height:100vh;display:flex;align-items:center;
   background:var(--navy);
   position:relative;overflow:hidden;
@@ -138,7 +127,7 @@ body::before{
 .hero-in{
   position:relative;z-index:2;
   max-width:var(--max);margin:0 auto;padding:5rem 2rem 4rem;width:100%;
-  display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:center;
+  display:block;
 }
 .hero-tag{
   display:inline-flex;align-items:center;gap:.6rem;
@@ -216,16 +205,7 @@ h1.hero-h em{font-style:italic;color:var(--gold2)}
   border:1px solid rgba(200,149,10,.4);color:var(--gold);padding:.2rem .55rem;border-radius:4px;
 }
 
-/* ═══ STRIP BAND ═══ */
-.strip{background:var(--green);padding:0 2rem}
-.strip-in{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:stretch;gap:0}
-.strip-item{
-  flex:1;padding:1.4rem 1.5rem;display:flex;align-items:center;gap:.75rem;
-  border-right:1px solid rgba(250,246,238,.15);
-}
-.strip-item:last-child{border-right:none}
-.strip-ico{font-size:1.2rem;flex-shrink:0}
-.strip-txt{font-family:var(--ff-c);font-size:.78rem;font-weight:600;letter-spacing:.05em;color:rgba(250,246,238,.85);line-height:1.3}
+
 
 /* ═══ CATEGORIES ═══ */
 .sec{padding:5rem 0}
@@ -321,55 +301,28 @@ h2.sh2 em{font-style:italic;color:var(--green2)}
 .empty-p h3{font-family:var(--ff-d);font-size:1.3rem;color:var(--navy2);margin-bottom:.3rem}
 .empty-p p{font-size:.83rem;color:var(--muted)}
 
-/* ═══ WHY ═══ */
-.why-sec{background:var(--navy);padding:5rem 0}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.why-sec{background:var(--navy);padding:5.5rem 0}
 .why-sec .eyebrow .ey-line{background:var(--gold2)}
 .why-sec .ey-txt{color:var(--gold2)}
-.why-sec h2.sh2{color:var(--cream)}
+.why-sec h2.sh2{color:var(--cream);text-align:center}
 .why-sec h2.sh2 em{color:var(--gold2)}
-.why-desc{font-size:.9rem;font-weight:300;color:rgba(250,246,238,.5);line-height:1.85;margin-top:.5rem;max-width:420px}
-.why-feats{margin-top:2.5rem;display:flex;flex-direction:column;gap:.9rem}
+.why-intro{font-size:.92rem;font-weight:300;color:rgba(250,246,238,.5);line-height:1.85;max-width:520px;margin:0 auto;text-align:center}
+.why-head{text-align:center;margin-bottom:3.5rem}
+.why-feats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
 .why-feat{
-  display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:2rem 1.4rem;
   border-radius:var(--r2);background:rgba(250,246,238,.04);border:1px solid rgba(250,246,238,.08);
   transition:var(--t);
 }
-.why-feat:hover{background:rgba(250,246,238,.08);border-color:rgba(200,149,10,.2)}
+.why-feat:hover{background:rgba(250,246,238,.08);border-color:rgba(200,149,10,.25);transform:translateY(-3px)}
 .why-ico{
-  width:40px;height:40px;min-width:40px;border-radius:9px;
-  background:rgba(200,149,10,.12);border:1px solid rgba(200,149,10,.22);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(200,149,10,.1);border:1.5px solid rgba(200,149,10,.25);
+  display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;
 }
-.why-ft{font-family:var(--ff-d);font-size:.95rem;font-weight:700;color:var(--cream);margin-bottom:.2rem}
-.why-fd{font-size:.8rem;font-weight:300;color:rgba(250,246,238,.45);line-height:1.7}
-/* Why right — stats panel */
-.why-panel{
-  background:rgba(250,246,238,.04);border:1px solid rgba(250,246,238,.1);
-  border-radius:var(--r2);overflow:hidden;
-}
-.why-panel-top{
-  padding:2rem;background:linear-gradient(135deg, rgba(27,94,56,.25) 0%, rgba(200,149,10,.12) 100%);
-  border-bottom:1px solid rgba(250,246,238,.1);
-}
-.why-panel-top-n{font-family:var(--ff-d);font-size:3.2rem;font-weight:700;color:var(--gold2);line-height:1;letter-spacing:-.04em}
-.why-panel-top-l{font-size:.8rem;font-weight:300;color:rgba(250,246,238,.5);margin-top:.35rem;line-height:1.55}
-.why-stats-grid{display:grid;grid-template-columns:1fr 1fr}
-.why-stat{
-  padding:1.6rem 1.5rem;border-right:1px solid rgba(250,246,238,.08);border-bottom:1px solid rgba(250,246,238,.08);
-}
-.why-stat:nth-child(even){border-right:none}
-.why-stat:nth-last-child(-n+2){border-bottom:none}
-.why-stat-n{font-family:var(--ff-d);font-size:2.2rem;font-weight:700;color:var(--gold2);letter-spacing:-.04em;line-height:1}
-.why-stat-d{font-size:.74rem;font-weight:300;color:rgba(250,246,238,.38);margin-top:.4rem;line-height:1.55}
-.why-certs{
-  padding:1.2rem 1.5rem;border-top:1px solid rgba(250,246,238,.08);
-  display:flex;gap:.4rem;flex-wrap:wrap;
-}
-.why-cert{
-  font-family:var(--ff-c);font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
-  border:1px solid rgba(250,246,238,.15);color:rgba(250,246,238,.3);padding:.2rem .55rem;border-radius:4px;
-}
+.why-ft{font-family:var(--ff-d);font-size:1rem;font-weight:700;color:var(--cream);margin-bottom:.4rem;line-height:1.25}
+.why-fd{font-size:.79rem;font-weight:300;color:rgba(250,246,238,.42);line-height:1.72}
 
 /* ═══ TRUST BAND ═══ */
 .trust{background:var(--cream2);padding:2.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -466,17 +419,15 @@ footer{background:var(--navy);padding:4.5rem 0 2.5rem}
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:900px){
-  .hero-in{grid-template-columns:1fr}
-  .hero-card{display:none}
+
   .cats-grid{grid-template-columns:repeat(2,1fr)}
-  .why-grid{grid-template-columns:1fr;gap:3rem}
+
   .inq-grid{grid-template-columns:1fr;gap:2.5rem}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .strip-in{flex-wrap:wrap}
-  .strip-item{min-width:45%;border-right:none;border-bottom:1px solid rgba(250,246,238,.15)}
-  .strip-item:last-child{border-bottom:none}
+  .why-feats{grid-template-columns:repeat(2,1fr)}
+  .why-feats .why-feat{padding:1.4rem 1rem}
 }
 @media(max-width:640px){
   .nav-in{padding:0 1.2rem}
@@ -489,10 +440,11 @@ footer{background:var(--navy);padding:4.5rem 0 2.5rem}
   footer{padding:3.5rem 0 2rem}
   .trust{padding:2rem 0}
   .sec{padding:4rem 0}
-  .why-sec{padding:4rem 0}
+  .why-sec{padding:3rem 0}
 }
 @media(max-width:480px){
   .cats-grid{grid-template-columns:1fr 1fr;gap:.7rem}
+  .why-feats{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -546,10 +498,7 @@ footer{background:var(--navy);padding:4.5rem 0 2.5rem}
   <button class="btn-quote" onclick="sid('inquiry');toggleMenu()">Request a Quote</button>
 </div>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track" id="ticker-track"></div>
-</div>
+
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -570,29 +519,11 @@ footer{background:var(--navy);padding:4.5rem 0 2.5rem}
         <div class="hero-stat"><div class="hero-stat-n">100%</div><div class="hero-stat-l">Verified Suppliers</div></div>
       </div>
     </div>
-    <div class="hero-card" id="hero-card">
-      <div class="hero-card-hd">Product Categories</div>
-      <div id="hero-cat-rows"></div>
-      <div class="hero-divider"></div>
-      <div class="hero-certs">
-        <span class="hero-cert">ISO 22000</span>
-        <span class="hero-cert">HACCP</span>
-        <span class="hero-cert">FSSAI</span>
-        <span class="hero-cert">APEDA</span>
-      </div>
-    </div>
+
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-in">
-    <div class="strip-item"><span class="strip-ico">🌏</span><span class="strip-txt">India ↔ NZ &amp; Beyond</span></div>
-    <div class="strip-item"><span class="strip-ico">📦</span><span class="strip-txt">Flexible Pack Formats</span></div>
-    <div class="strip-item"><span class="strip-ico">🚢</span><span class="strip-txt">Full Export Documentation</span></div>
-    <div class="strip-item"><span class="strip-ico">🤝</span><span class="strip-txt">Long-Term Partnerships</span></div>
-  </div>
-</div>
+
 
 <!-- CATEGORIES -->
 <section class="sec" id="categories">
@@ -630,42 +561,41 @@ footer{background:var(--navy);padding:4.5rem 0 2.5rem}
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="why-sec" id="why">
   <div class="center">
-    <div class="why-grid">
-      <div>
-        <div class="eyebrow reveal"><div class="ey-line"></div><span class="ey-txt">Why RelifeProducts</span></div>
-        <h2 class="sh2 reveal">Built for <em>two-way trade</em><br/>across global markets</h2>
-        <p class="why-desc reveal">We connect buyers and suppliers across India, New Zealand, and beyond — handling sourcing, compliance, and logistics so you don't have to.</p>
-        <div class="why-feats">
-          <div class="why-feat reveal rd1"><div class="why-ico">🌏</div><div><div class="why-ft">India ↔ NZ &amp; Beyond</div><div class="why-fd">We move products in both directions — sourcing from India for international buyers and bringing global products into key markets.</div></div></div>
-          <div class="why-feat reveal rd2"><div class="why-ico">📦</div><div><div class="why-ft">Flexible Pack Formats</div><div class="why-fd">Bulk, retail-ready, and white-label packaging adapted to your market's requirements.</div></div></div>
-          <div class="why-feat reveal rd3"><div class="why-ico">🚢</div><div><div class="why-ft">End-to-End Documentation</div><div class="why-fd">Import/export paperwork, compliance certificates, and customs documentation handled in-house.</div></div></div>
-          <div class="why-feat reveal rd4"><div class="why-ico">🤝</div><div><div class="why-ft">Long-Term Partnerships</div><div class="why-fd">Preferred pricing for repeat buyers. Framework agreements available for high-volume trade.</div></div></div>
+    <div class="why-head reveal">
+      <div class="eyebrow" style="justify-content:center"><div class="ey-line"></div><span class="ey-txt">Why RelifeProducts</span></div>
+      <h2 class="sh2" style="margin-top:.5rem">Built for <em>two-way trade</em><br/>across global markets</h2>
+      <p class="why-intro" style="margin-top:.9rem">We connect buyers and suppliers across India, New Zealand, and beyond — handling sourcing, compliance, and logistics so you don't have to.</p>
+    </div>
+    <div class="why-feats">
+      <div class="why-feat reveal rd1">
+        <div class="why-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(200,149,10,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
         </div>
+        <div class="why-ft">India ↔ NZ &amp; Beyond</div>
+        <div class="why-fd">We move products in both directions — sourcing from India for international buyers and bringing global products into key markets.</div>
       </div>
-      <div class="reveal rd1">
-        <div class="why-panel">
-          <div class="why-panel-top">
-            <div class="why-panel-top-n">&lt;24h</div>
-            <div class="why-panel-top-l">Response time on every incoming RFQ — guaranteed by our export team.</div>
-          </div>
-          <div class="why-stats-grid">
-            <div class="why-stat"><div class="why-stat-n">5+</div><div class="why-stat-d">Countries actively traded across</div></div>
-            <div class="why-stat"><div class="why-stat-n">15yr</div><div class="why-stat-d">Combined industry experience</div></div>
-            <div class="why-stat"><div class="why-stat-n">2-way</div><div class="why-stat-d">Import &amp; export in every market</div></div>
-            <div class="why-stat"><div class="why-stat-n">100%</div><div class="why-stat-d">Verified &amp; audited suppliers</div></div>
-          </div>
-          <div class="why-certs">
-            <span class="why-cert">ISO 22000</span>
-            <span class="why-cert">HACCP</span>
-            <span class="why-cert">FSSAI</span>
-            <span class="why-cert">APEDA</span>
-            <span class="why-cert">Organic</span>
-            <span class="why-cert">Lab Tested</span>
-          </div>
+      <div class="why-feat reveal rd2">
+        <div class="why-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(200,149,10,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
+        <div class="why-ft">Flexible Pack Formats</div>
+        <div class="why-fd">Bulk, retail-ready, and white-label packaging adapted to your market's requirements.</div>
+      </div>
+      <div class="why-feat reveal rd3">
+        <div class="why-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(200,149,10,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="why-ft">End-to-End Documentation</div>
+        <div class="why-fd">Import/export paperwork, compliance certificates, and customs documentation handled in-house.</div>
+      </div>
+      <div class="why-feat reveal rd4">
+        <div class="why-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(200,149,10,0.85)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="why-ft">Long-Term Partnerships</div>
+        <div class="why-fd">Preferred pricing for repeat buyers. Framework agreements available for high-volume trade.</div>
       </div>
     </div>
   </div>
@@ -842,28 +772,17 @@ const PROD_IMGS={
 };
 
 let PRODS=[],activeCat='All',modalProd=null;
-document.addEventListener('DOMContentLoaded',()=>{buildTicker();loadProds();buildChips();initReveal();initNav();});
-
-function buildTicker(){
-  const items=['Cereals & Grains','Spices & Herbs','Confectionery','Sweeteners','Fats & Oils','Ready-to-Eat','ISO 22000','HACCP Certified','FSSAI Approved','APEDA Registered','5+ Countries','B2B Food Exports'];
-  const d=[...items,...items];
-  document.getElementById('ticker-track').innerHTML=d.map(i=>`<span class="ticker-item"><span class="ticker-dot"></span>${i}</span>`).join('');
-}
+document.addEventListener('DOMContentLoaded',()=>{loadProds();buildChips();initReveal();initNav();});
 
 async function loadProds(){
   try{const r=await fetch(API_BASE+'/products');const j=await r.json();PRODS=j.ok?j.data:[];}catch(e){PRODS=[];}
-  buildHeroRows();buildCatsGrid();renderProds();
+  buildCatsGrid();renderProds();
 }
 
 function getImg(p,idx){if(p.image&&p.image.trim())return p.image;const pool=PROD_IMGS[p.category]||PROD_IMGS['Cereals & Grains'];return pool[idx%pool.length];}
 function catMeta(k){return CATS.find(c=>c.key===k)||CATS[0]}
 
-function buildHeroRows(){
-  document.getElementById('hero-cat-rows').innerHTML=CATS.map(c=>{
-    const n=PRODS.filter(p=>p.category===c.key).length;
-    return `<div class="hero-cat-row" onclick="filterAndScroll('${esc(c.key)}')"><div class="hero-cat-left"><div class="hero-cat-icon">${c.ico}</div><span class="hero-cat-name">${esc(c.key)}</span></div><span class="hero-cat-arrow">${n} →</span></div>`;
-  }).join('');
-}
+
 
 function buildCatsGrid(){
   document.getElementById('cats-grid').innerHTML=CATS.map(c=>{
